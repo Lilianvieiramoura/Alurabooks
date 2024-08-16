@@ -53,6 +53,8 @@
       <!-- Slider main container -->
       <div class="swiper">
         <!-- Additional required wrapper -->
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
         <div class="swiper-wrapper">
           <!-- Slides -->
           <div class="swiper-slide"><img src="img/ApacheKafka.svg" alt=""></div>
@@ -63,17 +65,27 @@
           <div class="swiper-slide"><img src="img/Acessibilidade.svg" alt=""></div>
           
         </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-
         <!-- If we need navigation buttons -->
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
 
         <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
+        <!-- <div class="swiper-scrollbar"></div> -->
       </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper('.swiper', {
+      // speed: 400, //velocidade de troca de slide
+      spaceBetween: 10, //espaço entre cada slide
+      slidesPerView: 3,
+      pagination: {
+      el: '.swiper-pagination',
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + '</span>';
+      }
+      }
+      });
+    </script>
 </body>
 </html> 
